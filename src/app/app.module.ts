@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { PlayerCreateComponent } from './player-create/player-create.component';
 
 import { PlayerTableComponent } from './player-table/player-table.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent],
+  declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent, NavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
