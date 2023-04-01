@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <input type="text" class="form-control my-2" placeholder="serach" />
+    <!-- <input  #query (keyup)="filter(query.value)" type="text" class="form-control my-2" placeholder="serach by name"> -->
+    <table class="my-5 table table-hover table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Status</th>
+<th>Number</th>
+          <th>IMG</th>
+          <th>Possition</th>
+          <th>Done</th>
+
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players; let i = index">
+
+          <td>{{ player.id }}</td>
+          <td>{{ player.firstName }}</td>
+          <td>{{ player.lastName }}</td>
+          <td>{{ player.bestFoot }}</td>
+<td>{{player.number}}</td>
+          <td><img src="{{ player.avatar }}" alt="{{player.avatar}" /></td>
+          <td>{{player.possition}}</td>
+
+
+          <td>
+            <a class="btn btn-warning" routerLink="/{{ player.id }}"
+              >Details</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
