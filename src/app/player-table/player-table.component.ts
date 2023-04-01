@@ -21,8 +21,9 @@ export class PlayerTableComponent implements OnInit {
   //   number: 0,
   //   bestFoot: "",
   //   id: "",
-  // }
+  //  }
   id:any;
+  showDeletedMessage: boolean =true;
   constructor(private playerService: PlayerService, private route:ActivatedRoute,
     private router:Router) {}
   ngOnInit(): void {
@@ -38,15 +39,18 @@ export class PlayerTableComponent implements OnInit {
    });
   }
   }
-
-  deletePlayer(){
+  deletePlayer(playerId:any){
     let id = this.id as string;
     if(confirm("Da li ste sigurni?")){
-      if(id){
-    this.playerService.delete(this.id);
-    this.router.navigate([""])
+      // if(id){
+    this.playerService.delete(playerId);
+    this.router.navigate(["/"])
 
     }
   }
+
+
+
 }
-}
+
+

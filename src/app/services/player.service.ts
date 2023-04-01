@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase} from "@angular/fire/compat/database";
+import {AngularFireDatabase,  AngularFireList} from "@angular/fire/compat/database";
 import { Player } from '../models/player';
 import { Observable, map } from 'rxjs';
 import { list } from '@angular/fire/database';
@@ -8,8 +8,13 @@ import { list } from '@angular/fire/database';
   providedIn: 'root'
 })
 export class PlayerService {
+  list(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private db:AngularFireDatabase) { }
+
+
 
   getAll(): Observable<Player[]> {
     return this.db
@@ -44,4 +49,6 @@ export class PlayerService {
   delete(playerId: any) {
     this.db.object<Player>('/players/' + playerId).remove();
   }
+
+
 }
