@@ -12,6 +12,7 @@ import { PlayerCreateComponent } from './player-create/player-create.component';
 import { PlayerTableComponent } from './player-table/player-table.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent, NavComponent, FooterComponent],
@@ -20,6 +21,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
