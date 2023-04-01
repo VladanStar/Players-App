@@ -11,9 +11,10 @@ import { PlayerCreateComponent } from './player-create/player-create.component';
 
 import { PlayerTableComponent } from './player-table/player-table.component';
 import { NavComponent } from './shared/nav/nav.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent, NavComponent],
+  declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent, NavComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
