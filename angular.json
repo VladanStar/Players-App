@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "PlayersApp:build:production",
+            "firebaseProject": "players-app-2c565",
+            "firebaseHostingSite": "players-app-2c565"
+          }
         }
       }
     }

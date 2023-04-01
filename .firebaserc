@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "players-app-2c565": {
+      "hosting": {
+        "PlayersApp": [
+          "players-app-2c565"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "players-app-2c565"
+  }
+}
