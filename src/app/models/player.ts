@@ -2,7 +2,7 @@ export interface Player {
   firstName?: string;
   avatar?: string;
   lastName?: string;
-  possition: 'Electric';
+  possition?: string;
   number?: number;
   bestFoot?: string;
   id?: string;

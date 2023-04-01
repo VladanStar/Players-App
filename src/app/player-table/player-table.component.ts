@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from '../models/player';
 import { PlayerService } from '../services/player.service';
 
@@ -11,10 +11,32 @@ import { PlayerService } from '../services/player.service';
 })
 export class PlayerTableComponent implements OnInit {
   players: Player[] = [];
+  player:Player={
+
+  }
+  //   firstName: "",
+  //   avatar: "",
+  //   lastName: "",
+  //   possition: "",
+  //   number: 0,
+  //   bestFoot: "",
+  //   id: "",
+  // }
   id:any;
-  constructor(private playerService: PlayerService, private router: Router) {}
+  constructor(private playerService: PlayerService, private route:ActivatedRoute,
+    private router:Router) {}
   ngOnInit(): void {
     this.playerService.getAll().subscribe((p) => (this.players = p));
+
+    this.id= this.route.snapshot.paramMap.get("id")
+    if(this.id){
+
+
+    this.playerService.get(this.id).subscribe(p => {
+     this.player = p;
+     console.log(this.player);
+   });
+  }
   }
 
   deletePlayer(){
