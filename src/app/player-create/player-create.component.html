@@ -1,48 +1,53 @@
-<form #f="ngForm" (ngSubmit)="addBook(f)">
+<div class="container">
+<div class="row">
+  <form #f="ngForm" (ngSubmit)="addPlayer(f)">
 
-  <div class="mb-3">
-<label for="firstName">*FirstName</label>
-<input title="#" ngModel type="text" id="firstName" #firstName="ngModel" name="firstName" class="form-control"
-required
-[ngClass]="{'is-invalid':firstName.invalid && firstName.touched}" >
+    <div class="mb-3">
+  <label for="firstName">*FirstName</label>
+  <input title="#" ngModel type="text" id="firstName" #firstName="ngModel" name="firstName" class="form-control"
+  required
+  [ngClass]="{'is-invalid':firstName.invalid && firstName.touched}" >
+    </div>
+
+    <!-- <div [hidden]="!firstName.errors?.['required']" class="invalid-feedback">firstName je obavezan</div> -->
+    <div class="mb-3">
+      <label for="lastName">*LastName</label>
+      <input title="#" ngModel type="text" id="name" #lastName="ngModel" name="lastName" class="form-control"
+      required
+      [ngClass]="{'is-invalid':lastName.invalid && lastName.touched}" >
+        </div>
+
+
+    <div class="mb-3">
+      <label for="avatar">Avatar</label>
+      <input title="$" ngModel type="string" id="avatar" name="img" #img="ngModel" class="form-control" placeholder="unesite copy image address">
   </div>
 
-  <!-- <div [hidden]="!firstName.errors?.['required']" class="invalid-feedback">firstName je obavezan</div> -->
-  <div class="mb-3">
-    <label for="lastName">*LastName</label>
-    <input title="#" ngModel type="text" id="name" #lastName="ngModel" name="lastName" class="form-control"
-    required
-    [ngClass]="{'is-invalid':lastName.invalid && lastName.touched}" >
-      </div>
 
+    <div class="mb-3">
+        <label for="possition">*Possition</label>
+        <input  ngModel type="text" id="possition" name="possition" #possition="ngModel" class="form-control"
+        required
+        [ngClass]="{'is-invalid':possition.invalid && possition.touched}">
+    </div>
+    <div class="mb-3">
+        <label for="number">*Number</label>
+        <input   ngModel type="text" name="number"  id="number" #number="ngModel" class="form-control"
+        required
+        [ngClass]="{'is-invalid':number.invalid && number.touched}">
+    </div>
+    <div class="mb-3">
+        <label for="id">ID</label>
+        <input ngModel type="number" id="id"  name="id" #id="ngModel" class="form-control" >
+    </div>
 
-  <div class="mb-3">
-    <label for="slika">Avatar</label>
-    <input title="$" ngModel type="string" id="slikaz" name="img" #img="ngModel" class="form-control" placeholder="unesite copy image address">
+    <div class="mb-3">
+        <label for="bestFoot">Best Foot</label>
+        <input ngModel type="text" id="bestFoot" name="bestFoot" #bestFoot="ngModel" class="form-control" >
+    </div>
+
+   <button class="btn btn-success" type="submit">Add Book</button>
+  </form>
+
 </div>
-
-
-  <div class="mb-3">
-      <label for="possition">*Possition</label>
-      <input  ngModel type="text" id="possition" name="possition" #possition="ngModel" class="form-control"
-      required
-      [ngClass]="{'is-invalid':possition.invalid && possition.touched}">
-  </div>
-  <div class="mb-3">
-      <label for="number">*Number</label>
-      <input   ngModel type="text" name="number"  id="number" #number="ngModel" class="form-control"
-      required
-      [ngClass]="{'is-invalid':number.invalid && number.touched}">
-  </div>
-  <div class="mb-3">
-      <label for="id">ID</label>
-      <input ngModel type="number" id="id"  name="id" #id="ngModel" class="form-control" >
-  </div>
-
-  <div class="mb-3">
-      <label for="bestFoot">Godina Izdavanja</label>
-      <input ngModel type="number" id="bestFoot" name="bestFoot" #bestFoot="ngModel" class="form-control" >
-  </div>
-
- <button class="btn btn-success" type="submit">Add Book</button>
-</form>
+</div>

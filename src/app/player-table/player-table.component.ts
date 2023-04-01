@@ -11,8 +11,20 @@ import { PlayerService } from '../services/player.service';
 })
 export class PlayerTableComponent implements OnInit {
   players: Player[] = [];
+  id:any;
   constructor(private playerService: PlayerService, private router: Router) {}
   ngOnInit(): void {
     this.playerService.getAll().subscribe((p) => (this.players = p));
   }
+
+  deletePlayer(){
+    let id = this.id as string;
+    if(confirm("Da li ste sigurni?")){
+      if(id){
+    this.playerService.delete(this.id);
+    this.router.navigate([""])
+
+    }
+  }
+}
 }

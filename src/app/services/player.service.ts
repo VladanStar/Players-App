@@ -38,9 +38,9 @@ export class PlayerService {
     this.db.object<Player>('/tasks/' + PlayerId).update(Player);
   }
   add(Player: Player) {
-    this.db.list('/tasks').push(Player);
+    this.db.list('/').push(Player);
   }
   delete(PlayerId: any) {
-    this.db.object<Player>('/tasks/' + PlayerId).remove();
+    this.db.object<Player>('' + PlayerId).remove();
   }
 }

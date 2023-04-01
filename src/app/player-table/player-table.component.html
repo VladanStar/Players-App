@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <td>
-      <a class="btn btn-info" routerLink=""
+      <a class="btn btn-info" routerLink="add"
         >Create Player</a
       >
     </td>
@@ -40,9 +40,7 @@
             >
           </td>
           <td>
-            <a class="btn btn-danger" routerLink="/{{ player.id }}"
-              >Delete</a
-            >
+            <button class="btn btn-danger" (click)="deletePlayer()">Delete</button>
           </td>
         </tr>
       </tbody>
