@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/compat/database";
 import { Player } from '../models/player';
 import { Observable, map } from 'rxjs';
+import { list } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PlayerService {
 
   getAll(): Observable<Player[]> {
     return this.db
-      .list<Player>('/')
+      .list<Player>('/players')
       .snapshotChanges()
       .pipe(
         map((x) =>
@@ -25,7 +26,7 @@ export class PlayerService {
   }
   get(id: string): Observable<Player> {
     return this.db
-      .object<Player>('/tasks/' + id)
+      .object<Player>('/players/' + id)
       .snapshotChanges()
       .pipe(
         map((x: any) => ({
@@ -35,12 +36,12 @@ export class PlayerService {
       );
   }
   update(PlayerId: string, Player: Player): void {
-    this.db.object<Player>('/tasks/' + PlayerId).update(Player);
+    this.db.object<Player>('/players/' + PlayerId).update(Player);
   }
   add(Player: Player) {
-    this.db.list('/').push(Player);
+    this.db.list('/players').push(Player);
   }
   delete(PlayerId: any) {
-    this.db.object<Player>('' + PlayerId).remove();
+    this.db.object<Player>('/players/' + PlayerId).remove();
   }
 }

@@ -5,7 +5,7 @@ import { PlayerCreateComponent } from './player-create/player-create.component';
 
 const routes: Routes = [
 {path:"", component:PlayerTableComponent},
-{path:"add",component:PlayerCreateComponent},
+{path:"player/add",component:PlayerCreateComponent},
 ];
 
 @NgModule({

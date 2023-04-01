@@ -5,5 +5,5 @@ export interface Player {
   possition: 'Electric';
   number?: number;
   bestFoot?: string;
-  id?: number;
+  id?: string;
 }
