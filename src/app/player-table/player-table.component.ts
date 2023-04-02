@@ -11,9 +11,7 @@ import { PlayerService } from '../services/player.service';
 })
 export class PlayerTableComponent implements OnInit {
   players: Player[] = [];
-  player:Player={
-
-  }
+  player: Player = {};
   //   firstName: "",
   //   avatar: "",
   //   lastName: "",
@@ -22,16 +20,18 @@ export class PlayerTableComponent implements OnInit {
   //   bestFoot: "",
   //   id: "",
   //  }
-  id:any;
-  showDeletedMessage: boolean =true;
-  constructor(private playerService: PlayerService, private route:ActivatedRoute,
-    private router:Router) {}
+  id: any;
+  showDeletedMessage: boolean = true;
+  constructor(
+    private playerService: PlayerService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
   // ngOnInit(): void {
   //   this.playerService.getAll().subscribe((p) => (this.players = p));
 
   //   this.id= this.route.snapshot.paramMap.get("id")
   //   if(this.id){
-
 
   //   this.playerService.get(this.id).subscribe(p => {
   //    this.player = p;
@@ -40,36 +40,14 @@ export class PlayerTableComponent implements OnInit {
   // }
   // }
   ngOnInit(): void {
-    this.playerService.getAll().subscribe(players => {
+    this.playerService.getAll().subscribe((players) => {
       this.players = players;
     });
   }
-  // deletePlayer(playerId:any){
-  //   let id = this.id as string;
-  //   if(confirm("Da li ste sigurni?")){
-  //     // if(id){
-  //   this.playerService.delete(playerId);
-  //   this.router.navigate(["/"])
 
-  //   }
-  // }
-//   deletePlayer(playerId:any) {
-//     // this.id= this.route.snapshot.paramMap.get("id")
-// console.log(playerId)
-//     this.playerService.delete(playerId)
-
-//   }
-
-deletePlayer(id: any) {
-  if (confirm('Are you sure you want to delete this player?')) {
-    this.playerService.delete(id)
-
-
+  deletePlayer(id: any) {
+    if (confirm('Are you sure you want to delete this player?')) {
+      this.playerService.delete(id);
+    }
   }
 }
-
-
-
-}
-
-
