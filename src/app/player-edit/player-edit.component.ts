@@ -30,12 +30,20 @@ constructor(private playerServis:PlayerService,
     this.id= this.route.snapshot.paramMap.get("id")
     if(this.id){
 
-
     this.playerServis.get(this.id).subscribe(p => {
      this.player = p;
      console.log(this.player);
    });
   }
-
   }
+
+  updatePlayer(f:NgForm){
+    // console.log(f.value)
+     let id =this.id as string;
+    this.playerServis.update(id, f.value);
+    window.alert('Player is Edited');
+
+    this.router.navigate(["/"])
+
+      }
 }
