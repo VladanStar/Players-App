@@ -1,1 +1,22 @@
-<p>player-detail works!</p>
+<div class="container">
+<div class="row">
+  <div class="card" *ngIf="player">
+    <a routerLink="/" class="btn btn-sm btn-secondary mb-3 back"  >Back</a>
+    <h3 class="card-header">{{player.firstName}} {{player.lastName}}</h3>
+    <!-- <h4>{{player.naziv}}</h4> -->
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">Last Name: {{player.lastName}}</li>
+            <li class="list-group-item">possition: {{player.possition}}</li>
+            <li class="list-group-item">Number: {{player.number}}</li>
+            <li class="list-group-item">ID: {{player.id}}</li>
+            <li class="list-group-item">Best Foot: {{player.bestFoot}}</li>
+
+            <!-- <li>{{player.id}}</li> -->
+        </ul>
+    </div>
+
+    </div>
+</div>
+</div>
+

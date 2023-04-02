@@ -23,7 +23,7 @@
       <tbody>
         <tr *ngFor="let player of players; let i = index">
           <td>{{ player.id }}</td>
-          <td><a routerLink="player/edit/:id"> {{ player.firstName }}</a> </td>
+          <td><a routerLink="player/{{player.id}}"> {{ player.firstName }}</a> </td>
           <td>{{ player.lastName }}</td>
           <td>{{ player.bestFoot }}</td>
           <td>{{ player.number }}</td>
