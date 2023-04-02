@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+NgxPaginationModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
 Ng2SearchPipeModule,

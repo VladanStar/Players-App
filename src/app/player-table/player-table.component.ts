@@ -23,6 +23,9 @@ export class PlayerTableComponent implements OnInit {
   id: any;
   showDeletedMessage: boolean = true;
   searchText:any;
+  totalLength: any;
+  page: number = 1;
+  p: any;
   constructor(
     private playerService: PlayerService,
     private route: ActivatedRoute,
