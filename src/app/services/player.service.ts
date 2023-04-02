@@ -8,12 +8,10 @@ import { list } from '@angular/fire/database';
   providedIn: 'root'
 })
 export class PlayerService {
-  list(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
+  private dbPath = '/players';
+
 
   constructor(private db:AngularFireDatabase) { }
-
 
 
   getAll(): Observable<Player[]> {
@@ -46,9 +44,12 @@ export class PlayerService {
   add(Player: Player) {
     this.db.list('/players').push(Player);
   }
+
+
   delete(playerId: any) {
     this.db.object<Player>('/players/' + playerId).remove();
   }
+
 
 
 }
