@@ -1,33 +1,70 @@
 <div class="container">
-<div class="row">
-  <form #f="ngForm" (ngSubmit)="updatePlayer(f)">
-
-    <div class="mb-3">
-<label for="firstName">First Name</label>
-<input  title="#f" [(ngModel)]="player.firstName" type="text" id="name" name="firstName" class="form-control" >
-    </div>
-    <div class="mb-3">
+  <div class="row">
+    <form #f="ngForm" (ngSubmit)="updatePlayer(f)">
+      <div class="mb-3">
+        <label for="firstName">First Name</label>
+        <input
+          title="#f"
+          [(ngModel)]="player.firstName"
+          type="text"
+          id="name"
+          name="firstName"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
         <label for="lastName">Last Name</label>
-        <input  [(ngModel)]="player.lastName" type="text" name="lastName" id="lastName" class="form-control" >
-    </div>
-    <div class="mb-3">
+        <input
+          [(ngModel)]="player.lastName"
+          type="text"
+          name="lastName"
+          id="lastName"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
         <label for="possition">Possition</label>
-        <input  [(ngModel)]="player.possition" type="text" id="possition" name="possition" class="form-control">
-    </div>
-    <div class="mb-3">
+        <input
+          [(ngModel)]="player.possition"
+          type="text"
+          id="possition"
+          name="possition"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
         <label for="bestFoot">Best Foot</label>
-        <input   [(ngModel)]="player.bestFoot" type="text" name="bestFoot"  id="bestFoot" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label for="number">Number</label>
-        <input [(ngModel)]="player.number" type="number" id="number"  name="number" class="form-control" >
-    </div>
-    <div class="mb-3">
-        <label for="avatar">Avatar</label>
-        <input [(ngModel)]="player.avatar" type="text" id="avatar" name="avatar" class="form-control" >
-    </div>
+        <input
+          [(ngModel)]="player.bestFoot"
+          type="text"
+          name="bestFoot"
+          id="bestFoot"
+          class="form-control"
+        />
+      </div>
 
-   <button class="btn btn-success" type="submit">Edit Player</button>
-</form>
-</div>
+      <div class="mb-3">
+        <label for="number">Number</label>
+        <input
+          [(ngModel)]="player.number"
+          type="number"
+          id="number"
+          name="number"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="avatar">Avatar</label>
+        <input
+          [(ngModel)]="player.avatar"
+          type="text"
+          id="avatar"
+          name="avatar"
+          class="form-control"
+        />
+      </div>
+
+      <button class="btn btn-success" type="submit">Edit Player</button>
+    </form>
+  </div>
 </div>

@@ -31,7 +31,7 @@
           <td>{{ player.possition }}</td>
 
           <td>
-            <a class="btn btn-warning" routerLink="player/edit/:id">Edit</a>
+            <a class="btn btn-warning" routerLink="player/edit/{{player.id}}">Edit</a>
           </td>
           <td>
             <button class="btn btn-danger" (click)="deletePlayer(player.id)">
