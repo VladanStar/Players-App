@@ -8,22 +8,33 @@ import { environment } from '../environments/environment';
 
 import { FormsModule } from '@angular/forms';
 import { PlayerCreateComponent } from './player-create/player-create.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PlayerTableComponent } from './player-table/player-table.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayerCreateComponent, PlayerTableComponent, NavComponent, FooterComponent, PlayerEditComponent, PlayerDetailComponent],
+  declarations: [
+    AppComponent,
+    PlayerCreateComponent,
+    PlayerTableComponent,
+    NavComponent,
+    FooterComponent,
+    PlayerEditComponent,
+    PlayerDetailComponent,
+    NotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
+Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

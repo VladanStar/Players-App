@@ -22,23 +22,13 @@ export class PlayerTableComponent implements OnInit {
   //  }
   id: any;
   showDeletedMessage: boolean = true;
+  searchText:any;
   constructor(
     private playerService: PlayerService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
-  // ngOnInit(): void {
-  //   this.playerService.getAll().subscribe((p) => (this.players = p));
 
-  //   this.id= this.route.snapshot.paramMap.get("id")
-  //   if(this.id){
-
-  //   this.playerService.get(this.id).subscribe(p => {
-  //    this.player = p;
-  //    console.log(this.player);
-  //  });
-  // }
-  // }
   ngOnInit(): void {
     this.playerService.getAll().subscribe((players) => {
       this.players = players;

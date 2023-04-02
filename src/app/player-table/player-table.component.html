@@ -3,8 +3,13 @@
     <td>
       <a class="btn btn-info" routerLink="player/add">Create Player</a>
     </td>
-    <input type="text" class="form-control my-2" placeholder="serach" />
-    <!-- <input  #query (keyup)="filter(query.value)" type="text" class="form-control my-2" placeholder="serach by name"> -->
+
+    <input
+      type="text"
+      class="form-control my-2"
+      [(ngModel)]="searchText"
+      placeholder="Search"
+    />
     <table class="my-5 table table-hover table-striped">
       <thead class="table-dark">
         <tr>
@@ -21,9 +26,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let player of players; let i = index">
+        <tr *ngFor="let player of players | filter : searchText; let i = index">
           <td>{{ player.id }}</td>
-          <td><a routerLink="player/{{player.id}}"> {{ player.firstName }}</a> </td>
+          <td>
+            <a routerLink="player/{{ player.id }}"> {{ player.firstName }}</a>
+          </td>
           <td>{{ player.lastName }}</td>
           <td>{{ player.bestFoot }}</td>
           <td>{{ player.number }}</td>
@@ -31,7 +38,9 @@
           <td>{{ player.possition }}</td>
 
           <td>
-            <a class="btn btn-warning" routerLink="player/edit/{{player.id}}">Edit</a>
+            <a class="btn btn-warning" routerLink="player/edit/{{ player.id }}"
+              >Edit</a
+            >
           </td>
           <td>
             <button class="btn btn-danger" (click)="deletePlayer(player.id)">
