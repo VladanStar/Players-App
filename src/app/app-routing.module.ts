@@ -5,12 +5,17 @@ import { PlayerCreateComponent } from './player-create/player-create.component';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 
 const routes: Routes = [
-{path:"", component:PlayerTableComponent},
+  {path: '', redirectTo:'login', pathMatch:'full'},
+  {path: 'login', component : LoginComponent},
+  {path: 'register', component : RegisterComponent},
+{path:"home", component:PlayerTableComponent},
 {path:"player/add",component:PlayerCreateComponent},
 {path: 'player/edit/:id', component:PlayerEditComponent},
-{path:"player/:id", component: PlayerDetailComponent},
+{path:"home/player/:id", component: PlayerDetailComponent},
 { path: '**', component: NotFoundComponent },
 ];
 
