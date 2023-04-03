@@ -1,0 +1,17 @@
+.container {
+  height: 100vh;
+  width: 100%;
+
+background-color: aqua;
+}
+.dr {
+  position: absolute;
+}
+.task {
+  background-color: rgb(102, 23, 176) !important;
+  color: red !important;
+  font-size: 18px;
+  font-weight: bold;
+  top:0;
+  left: 0;
+}

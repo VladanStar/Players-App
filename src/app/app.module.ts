@@ -19,6 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { VerifyEmailComponent } from './login/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RegisterComponent } from './login/register/register.component';
     NotFoundComponent,
     LoginComponent,
     RegisterComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
