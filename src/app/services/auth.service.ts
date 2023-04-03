@@ -18,6 +18,7 @@ export class AuthService {
   // login method
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
+      localStorage.setItem('token','true');
 
 
         if(res.user?.emailVerified == true) {
@@ -48,6 +49,7 @@ export class AuthService {
   // sign out
   logout() {
     this.fireauth.signOut().then( () => {
+      localStorage.removeItem('token');
 
       this.router.navigate(['/login']);
       this.isLoggedIn=false;
