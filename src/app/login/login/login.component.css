@@ -1,0 +1,13 @@
+.container-fluid{
+  height: 90vh;
+}
+.card {
+margin-top: 30%;
+border: 2px solid red;
+}
+input {
+ border: 2px solid royalblue;
+}
+a{
+  text-decoration: none;
+}
